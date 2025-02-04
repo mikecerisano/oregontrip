@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oregon Road Trip Itinerary</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --bg-light: #f8f9fa;
+            --spacing: 2rem;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--bg-light);
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 1rem;
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-top: var(--spacing);
+        }
+
+        h3 {
+            color: var(--primary);
+            margin-top: calc(var(--spacing) * 1.5);
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 5px;
+        }
+
+        .day-card {
+            margin-bottom: var(--spacing);
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: white;
+        }
+
+        .image-slider {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 500px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .slider-images {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+
+        .slider-images img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            z-index: 10;
+        }
+
+        .slider-button.left {
+            left: 1rem;
+        }
+
+        .slider-button.right {
+            right: 1rem;
+        }
+
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .costs {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: var(--spacing);
+        }
+
+        .costs ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .costs li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .costs li:last-child {
+            border-bottom: none;
+        }
+
+        strong {
+            color: var(--primary);
+        }
+
+        .location-list {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .location-list li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+    <script>
+        function slideImages(sliderId, direction) {
+            const slider = document.getElementById(sliderId);
+            const images = slider.querySelector('.slider-images');
+            const imageWidth = slider.offsetWidth;
+            const currentTransform = parseFloat(images.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+            const maxScroll = -(images.children.length - 1) * imageWidth;
+
+            if (direction === 'left' && currentTransform < 0) {
+                images.style.transform = `translateX(${currentTransform + imageWidth}px)`;
+            } else if (direction === 'right' && currentTransform > maxScroll) {
+                images.style.transform = `translateX(${currentTransform - imageWidth}px)`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Oregon Road Trip Itinerary (June 27 - July 4, 2025)</h1>
+        
+        <h2>Overview</h2>
+        <p><strong>Duration:</strong> 8 days</p>
+        <p><strong>Total Estimated Cost:</strong> ~$3,000</p>
+        
+        <div class="day-card">
+            <h3>Day 1: Portland & Columbia River Gorge</h3>
+            <p><strong>Highlights:</strong> <a href="https://www.google.com/maps/place/Multnomah+Falls/@45.5762169,-122.1157817,17z">Multnomah Falls</a>, <a href="https://www.google.com/maps/place/Latourell+Falls/@45.5378647,-122.240705,17z">Latourell Falls</a>, <a href="https://www.google.com/maps/place/Hood+River,+OR/@45.7067985,-121.5287472,12z">Hood River</a></p>
+            <p><strong>Stay:</strong> <a href="https://www.airbnb.com/rooms/44506907">Diamond in the Rough - Stevenson, WA</a></p>
+            <div class="image-slider" id="slider-day1">
+                <button class="slider-button left" onclick="slideImages('slider-day1', 'left')">&#9664;</button>
+                <div class="slider-images">
+                    <img src="https://i.imgur.com/9h3Nb26.jpeg" alt="Multnomah Falls">
+                    <img src="https://i.imgur.com/5GNyG63.jpeg" alt="Latourell Falls">
+                    <img src="https://i.imgur.com/rF3YPEj.jpeg" alt="Hood River">
+                </div>
+                <button class="slider-button right" onclick="slideImages('slider-day1', 'right')">&#9654;</button>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3>Day 2: Mt. Hood & Little Crater Lake</h3>
+            <p><strong>Highlights:</strong> <a href="https://www.google.com/maps/place/Trillium+Lake/@45.2848995,-121.7365412,17z">Trillium Lake</a>, <a href="https://www.google.com/maps/place/Timberline+Lodge/@45.3311318,-121.7135813,17z">Timberline Lodge</a>, <a href="https://www.google.com/maps/place/White+River+Sno-Park/@45.3200122,-121.647004,17z">White River Canyon Hike</a></p>
+            <p><strong>Stay:</strong> <a href="https://www.airbnb.com/rooms/44506907">Diamond in the Rough - Stevenson, WA</a></p>
+            <div class="image-slider" id="slider-day2">
+                <button class="slider-button left" onclick="slideImages('slider-day2', 'left')">&#9664;</button>
+                <div class="slider-images">
+                    <img src="https://i.imgur.com/itIEfgC.jpeg" alt="Trillium Lake">
+                    <img src="https://i.imgur.com/nmS5dxi.jpeg" alt="Timberline Lodge">
+                </div>
+                <button class="slider-button right" onclick="slideImages('slider-day2', 'right')">&#9654;</button>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3>Day 3: Silver Falls & Eugene</h3>
+            <p><strong>Highlights:</strong> <a href="https://www.google.com/maps/place/South+Falls+Lodge+Trailhead/@44.8776836,-122.6586588,17z">Trail of Ten Falls</a>, <a href="https://www.google.com/maps/place/Spencer+Butte/@43.990469,-123.105686,17z">Spencer Butte</a></p>
+            <p><strong>Stay:</strong> <a href="https://www.airbnb.com/rooms/1213928158929129071">Private Nature Lovers Sanctuary - Eugene, OR</a></p>
+            <div class="image-slider" id="slider-day3">
+                <button class="slider-button left" onclick="slideImages('slider-day3', 'left')">&#9664;</button>
+                <div class="slider-images">
+                    <img src="https://i.imgur.com/Ohm7RWe.jpeg" alt="Trail of Ten Falls">
+                    <img src="https://i.imgur.com/xcUhknb.jpeg" alt="Spencer Butte">
+                </div>
+                <button class="slider-button right" onclick="slideImages('slider-day3', 'right')">&#9654;</button>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3>Day 4: Clear Lake & McKenzie River</h3>
+            <p><strong>Highlights:</strong> <a href="https://www.google.com/maps/place/Clear+Lake/@44.3861744,-121.9815505,15z">Clear Lake</a>, <a href="https://www.google.com/maps/place/McKenzie+River+Trail/@44.1743873,-122.1569984,17z">McKenzie River Trail</a></p>
+            <p><strong>Stay:</strong> <a href="https://www.airbnb.com/rooms/43770561">On the River - Wooded Bliss Cabin - McKenzie Bridge, OR</a></p>
+            <div class="image-slider" id="slider-day4">
+                <button class="slider-button left" onclick="slideImages('slider-day4', 'left')">&#9664;</button>
+                <div class="slider-images">
+                    <img src="https://i.imgur.com/HUSPIMW.jpeg" alt="Clear Lake">
+                    <img src="https://i.imgur.com/o9oV04N.jpeg" alt="McKenzie River Trail">
+                </div>
+                <button class="slider-button right" onclick="slideImages('slider-day4', 'right')">&#9654;</button>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3>Day 5: Otter Crest Beach & Newport</h3>
+            <p><strong>Highlights:</strong> <a href="https://www.google.com/maps/place/Otter+Crest+Beach/@44.7490449,-124.0667927,17z">Otter Crest Beach</a>, <a href="https://www.google.com/maps/place/Devils+Punchbowl+State+Natural+Area/@44.7479033,-124.0560247,17z">Devil's Punchbowl</a>, <a href="https://www.google.com/maps/place/Nye+Beach/@44.6367834,-124.0647359,17z">Nye Beach</a></p>
+            <p><strong>Stay:</strong> <a href="https://www.airbnb.com/rooms/730437927121879065">The Driftwood at Nye Beach - Newport, OR</a></p>
+            <div class="image-slider" id="slider-day5">
+                <button class="slider-button left" onclick="slideImages('slider-day5', 'left')">&#9664;</button>
+                <div class="slider-images">
+                    <img src="https://i.imgur.com/F9jElMB.jpeg" alt="Otter Crest Beach">
+                    <img src="https://i.imgur.com/LlpJfUt.jpeg" alt="Devil's Punchbowl">
+                    <img src="https://i.imgur.com/dtrnYIc.jpeg" alt="Nye Beach">
+                </div>
+                <button class="slider-button right" onclick="slideImages('slider-day5', 'right')">&#9654;</button>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3>Day 6: Cannon Beach & Coastal Drive</h3>
+            <p><strong>Highlights:</strong> <a href="https://www.google.com/maps/place/Cape+Kiwanda+State+Natural+Area/@45.2155567,-123.965173,17z">Cape Kiwanda</a>, <a href="https://www.google.com/maps/place/Cannon+Beach/@45.8917734,-123.9615273,17z">Cannon Beach</a>, <a href="https://www.google.com/maps/place/Indian+Beach/@45.9220566,-123.9795465,17z">Indian Beach</a></p>
+            <p><strong>Stay:</strong> <a href="https://www.airbnb.com/rooms/554617289171594840">The Dolphin House - Rockaway Beach, OR</a></p>
+            <div class="image-slider" id="slider-day6">
+                <button class="slider-button left" onclick="slideImages('slider-day6', 'left')">&#9664;</button>
+                <div class="slider-images">
+                    <img src="https://i.imgur.com/IXyMqMg.jpeg" alt="Cape Kiwanda">
+                    <img src="https://i.imgur.com/Y1TiQIY.jpeg" alt="Cannon Beach">
+                    <img src="https://i.imgur.com/yUXPlUD.jpeg" alt="Indian Beach">
+                </div>
+                <button class="slider-button right" onclick="slideImages('slider-day6', 'right')">&#9654;</button>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <h3>Day 7: Twilight Filming Locations & Portland</h3>
+            <p><strong>Highlights:</strong></p>
+            <ul class="location-list">
+                <li><a href="https://www.google.com/maps/place/St+Helens,+OR/@45.8571484,-122.8620464,13z">St. Helens</a>: Twilight locations including the Swan house, parking lot where Edward saves Bella, and Thunderbird & Whale Bookstore</li>
+<li><a href="https://www.google.com/maps/place/Kalama+High+School/@46.0082684,-122.8420321,17z">Kalama High School</a></li>
+                <li><a href="https://www.google.com/maps/place/Carver+Cafe/@45.393148,-122.506759,15z">Carver Café</a></li>
+            </ul>
+            <p><strong>Stay:</strong> <a href="https://www.airbnb.com/rooms/1103529">The Hen House - Portland, OR</a></p>
+            <div class="image-slider" id="slider-day7">
+                <button class="slider-button left" onclick="slideImages('slider-day7', 'left')">&#9664;</button>
+                <div class="slider-images">
+                    <img src="https://i.imgur.com/WRUHVJr.jpeg" alt="Kalama High School">
+                    <img src="https://i.imgur.com/voNOP9A.jpeg" alt="Carver Cafe">
+                </div>
+                <button class="slider-button right" onclick="slideImages('slider-day7', 'right')">&#9654;</button>
+            </div>
+        </div>
+
+        <div class="costs">
+            <h3>Estimated Costs</h3>
+            <ul>
+                <li><strong>Rental Car:</strong> ~$500 (8 days)</li>
+                <li><strong>Gas:</strong> ~$250 (approx 900 miles)</li>
+                <li><strong>Airbnbs (with fees):</strong> ~$1,800 total</li>
+                <li><strong>Food:</strong> ~$400-500</li>
+                <li><strong>Activities & Extras:</strong> ~$250</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
