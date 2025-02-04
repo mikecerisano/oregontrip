@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.2">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Oregon Road Trip Itinerary&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--primary: #2c3e50;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--secondary: #3498db;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--bg-light: #f8f9fa;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--spacing: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Segoe UI', system-ui, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--bg-light);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #333;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1000px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 10px rgba(0,0,0,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: var(--spacing);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 3px solid var(--secondary);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>h2 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: var(--spacing);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>h3 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: calc(var(--spacing) * 1.5);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-light);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.day-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: var(--spacing);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.image-slider {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 500px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 6px rgba(0,0,0,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.slider-images {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.slider-images img {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 500px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>object-fit: cover;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-shrink: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.slider-button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-50%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(0, 0, 0, 0.5);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.5rem 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 10;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.slider-button.left {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.slider-button.right {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>right: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>a {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--secondary);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: color 0.2s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>a:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #2980b9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: underline;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.costs {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-light);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: var(--spacing);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.costs ul {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>list-style: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.costs li {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.5rem 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.costs li:last-child {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>strong {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.location-list {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>list-style: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.location-list li {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function slideImages(sliderId, direction) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const slider = document.getElementById(sliderId);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const images = slider.querySelector('.slider-images');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const imageWidth = slider.offsetWidth;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const currentTransform = parseFloat(images.style.transform.replace('translateX(', '').replace('px)', '')) || 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const maxScroll = -(images.children.length - 1) * imageWidth;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (direction === 'left' &amp;&amp; currentTransform &lt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>images.style.transform = `translateX(${currentTransform + imageWidth}px)`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else if (direction === 'right' &amp;&amp; currentTransform &gt; maxScroll) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>images.style.transform = `translateX(${currentTransform - imageWidth}px)`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Oregon Road Trip Itinerary (June 27 - July 4, 2025)&lt;/h1&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Overview&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;strong&gt;Duration:&lt;/strong&gt; 8 days&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;strong&gt;Total Estimated Cost:&lt;/strong&gt; ~$3,000&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="day-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Day 1: Portland &amp; Columbia River Gorge&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Highlights:&lt;/strong&gt; &lt;a href="https://www.google.com/maps/place/Multnomah+Falls/@45.5762169,-122.1157817,17z"&gt;Multnomah Falls&lt;/a&gt;, &lt;a href="https://www.google.com/maps/place/Latourell+Falls/@45.5378647,-122.240705,17z"&gt;Latourell Falls&lt;/a&gt;, &lt;a href="https://www.google.com/maps/place/Hood+River,+OR/@45.7067985,-121.5287472,12z"&gt;Hood River&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Stay:&lt;/strong&gt; &lt;a href="https://www.airbnb.com/rooms/44506907"&gt;Diamond in the Rough - Stevenson, WA&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="image-slider" id="slider-day1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="slider-button left" onclick="slideImages('slider-day1', 'left')"&gt;&amp;#9664;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="slider-images"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://i.imgur.com/9h3Nb26.jpeg" alt="Multnomah Falls"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://i.imgur.com/5GNyG63.jpeg" alt="Latourell Falls"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://i.imgur.com/rF3YPEj.jpeg" alt="Hood River"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="slider-button right" onclick="slideImages('slider-day1', 'right')"&gt;&amp;#9654;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="day-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Day 2: Mt. Hood &amp; Little Crater Lake&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Highlights:&lt;/strong&gt; &lt;a href="https://www.google.com/maps/place/Trillium+Lake/@45.2848995,-121.7365412,17z"&gt;Trillium Lake&lt;/a&gt;, &lt;a href="https://www.google.com/maps/place/Timberline+Lodge/@45.3311318,-121.7135813,17z"&gt;Timberline Lodge&lt;/a&gt;, &lt;a href="https://www.google.com/maps/place/White+River+Sno-Park/@45.3200122,-121.647004,17z"&gt;White River Canyon Hike&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Stay:&lt;/strong&gt; &lt;a href="https://www.airbnb.com/rooms/44506907"&gt;Diamond in the Rough - Stevenson, WA&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="image-slider" id="slider-day2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="slider-button left" onclick="slideImages('slider-day2', 'left')"&gt;&amp;#9664;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="slider-images"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://i.imgur.com/itIEfgC.jpeg" alt="Trillium Lake"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://i.imgur.com/nmS5dxi.jpeg" alt="Timberline Lodge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="slider-button right" onclick="slideImages('slider-day2', 'right')"&gt;&amp;#9654;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="day-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Day 3: Silver Falls &amp; Eugene&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Highlights:&lt;/strong&gt; &lt;a href="https://www.google.com/maps/place/South+Falls+Lodge+Trailhead/@44.8776836,-122.6586588,17z"&gt;Trail of Ten Falls&lt;/a&gt;, &lt;a href="https://www.google.com/maps/place/Spencer+Butte/@43.990469,-123.105686,17z"&gt;Spencer Butte&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Stay:&lt;/strong&gt; &lt;a href="https://www.airbnb.com/rooms/1213928158929129071"&gt;Private Nature Lovers Sanctuary - Eugene, OR&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="image-slider" id="slider-day3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="slider-button left" onclick="slideImages('slider-day3', 'left')"&gt;&amp;#9664;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="slider-images"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://i.imgur.com/Ohm7RWe.jpeg" alt="Trail of Ten Falls"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://i.imgur.com/xcUhknb.jpeg" alt="Spencer Butte"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="slider-button right" onclick="slideImages('slider-day3', 'right')"&gt;&amp;#9654;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="day-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Day 4: Clear Lake &amp; McKenzie River&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Highlights:&lt;/strong&gt; &lt;a href="https://www.google.com/maps/place/Clear+Lake/@44.3861744,-121.9815505,15z"&gt;Clear Lake&lt;/a&gt;, &lt;a href="https://www.google.com/maps/place/McKenzie+River+Trail/@44.1743873,-122.1569984,17z"&gt;McKenzie River Trail&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Stay:&lt;/strong&gt; &lt;a href="https://www.airbnb.com/rooms/43770561"&gt;On the River - Wooded Bliss Cabin - McKenzie Bridge, OR&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="image-slider" id="slider-day4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="slider-button left" onclick="slideImages('slider-day4', 'left')"&gt;&amp;#9664;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="slider-images"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://i.imgur.com/HUSPIMW.jpeg" alt="Clear Lake"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://i.imgur.com/o9oV04N.jpeg" alt="McKenzie River Trail"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="slider-button right" onclick="slideImages('slider-day4', 'right')"&gt;&amp;#9654;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="day-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Day 5: Otter Crest Beach &amp; Newport&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Highlights:&lt;/strong&gt; &lt;a href="https://www.google.com/maps/place/Otter+Crest+Beach/@44.7490449,-124.0667927,17z"&gt;Otter Crest Beach&lt;/a&gt;, &lt;a href="https://www.google.com/maps/place/Devils+Punchbowl+State+Natural+Area/@44.7479033,-124.0560247,17z"&gt;Devil's Punchbowl&lt;/a&gt;, &lt;a href="https://www.google.com/maps/place/Nye+Beach/@44.6367834,-124.0647359,17z"&gt;Nye Beach&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Stay:&lt;/strong&gt; &lt;a href="https://www.airbnb.com/rooms/730437927121879065"&gt;The Driftwood at Nye Beach - Newport, OR&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="image-slider" id="slider-day5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="slider-button left" onclick="slideImages('slider-day5', 'left')"&gt;&amp;#9664;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="slider-images"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://i.imgur.com/F9jElMB.jpeg" alt="Otter Crest Beach"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://i.imgur.com/LlpJfUt.jpeg" alt="Devil's Punchbowl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://i.imgur.com/dtrnYIc.jpeg" alt="Nye Beach"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="slider-button right" onclick="slideImages('slider-day5', 'right')"&gt;&amp;#9654;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="day-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Day 6: Cannon Beach &amp; Coastal Drive&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Highlights:&lt;/strong&gt; &lt;a href="https://www.google.com/maps/place/Cape+Kiwanda+State+Natural+Area/@45.2155567,-123.965173,17z"&gt;Cape Kiwanda&lt;/a&gt;, &lt;a href="https://www.google.com/maps/place/Cannon+Beach/@45.8917734,-123.9615273,17z"&gt;Cannon Beach&lt;/a&gt;, &lt;a href="https://www.google.com/maps/place/Indian+Beach/@45.9220566,-123.9795465,17z"&gt;Indian Beach&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Stay:&lt;/strong&gt; &lt;a href="https://www.airbnb.com/rooms/554617289171594840"&gt;The Dolphin House - Rockaway Beach, OR&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="image-slider" id="slider-day6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="slider-button left" onclick="slideImages('slider-day6', 'left')"&gt;&amp;#9664;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="slider-images"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://i.imgur.com/IXyMqMg.jpeg" alt="Cape Kiwanda"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://i.imgur.com/Y1TiQIY.jpeg" alt="Cannon Beach"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://i.imgur.com/yUXPlUD.jpeg" alt="Indian Beach"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="slider-button right" onclick="slideImages('slider-day6', 'right')"&gt;&amp;#9654;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="day-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Day 7: Twilight Filming Locations &amp; Portland&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Highlights:&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="location-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;a href="https://www.google.com/maps/place/St+Helens,+OR/@45.8571484,-122.8620464,13z"&gt;St. Helens&lt;/a&gt;: Twilight locations including the Swan house, parking lot where Edward saves Bella, and Thunderbird &amp; Whale Bookstore&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;a href="https://www.google.com/maps/place/Kalama+High+School/@46.0082684,-122.8420321,17z"&gt;Kalama High School&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;a href="https://www.google.com/maps/place/Carver+Cafe/@45.393148,-122.506759,15z"&gt;Carver Café&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Stay:&lt;/strong&gt; &lt;a href="https://www.airbnb.com/rooms/1103529"&gt;The Hen House - Portland, OR&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="image-slider" id="slider-day7"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="slider-button left" onclick="slideImages('slider-day7', 'left')"&gt;&amp;#9664;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="slider-images"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://i.imgur.com/WRUHVJr.jpeg" alt="Kalama High School"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://i.imgur.com/voNOP9A.jpeg" alt="Carver Cafe"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="slider-button right" onclick="slideImages('slider-day7', 'right')"&gt;&amp;#9654;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="costs"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Estimated Costs&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Rental Car:&lt;/strong&gt; ~$500 (8 days)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Gas:&lt;/strong&gt; ~$250 (approx 900 miles)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Airbnbs (with fees):&lt;/strong&gt; ~$1,800 total&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Food:&lt;/strong&gt; ~$400-500&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Activities &amp; Extras:&lt;/strong&gt; ~$250&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
