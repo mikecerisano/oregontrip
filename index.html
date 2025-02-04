@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#2c3e50">
     <title>Oregon Road Trip Itinerary</title>
     <style>
         :root {
@@ -13,11 +14,12 @@
         }
         
         body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
             line-height: 1.6;
             margin: 0;
             background-color: var(--bg-light);
             color: #333;
+            -webkit-text-size-adjust: 100%;
         }
 
         .container {
@@ -82,12 +84,19 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.7);
             color: white;
             border: none;
             cursor: pointer;
             padding: 0.5rem 1rem;
             z-index: 10;
+            border-radius: 4px;
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .slider-button.left {
@@ -102,6 +111,10 @@
             color: var(--secondary);
             text-decoration: none;
             transition: color 0.2s ease;
+            padding: 0.25rem 0;
+            display: inline-flex;
+            min-height: 44px;
+            align-items: center;
         }
 
         a:hover {
@@ -141,6 +154,56 @@
 
         .location-list li {
             margin-bottom: 0.5rem;
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+                line-height: 1.3;
+                margin-bottom: 1rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+                margin-top: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+                margin-top: 1rem;
+                padding: 0.75rem;
+            }
+
+            .day-card {
+                padding: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .image-slider {
+                height: 300px;
+            }
+
+            .slider-images img {
+                height: 300px;
+            }
+
+            .costs {
+                padding: 1rem;
+            }
+
+            .location-list {
+                padding-left: 0.5rem;
+            }
+
+            .location-list li {
+                margin-bottom: 1rem;
+                padding-left: 1rem;
+            }
         }
     </style>
     <script>
@@ -242,7 +305,8 @@
         <div class="day-card">
             <h3>Day 6: Cannon Beach & Coastal Drive</h3>
             <p><strong>Highlights:</strong> <a href="https://www.google.com/maps/place/Cape+Kiwanda+State+Natural+Area/@45.2155567,-123.965173,17z">Cape Kiwanda</a>, <a href="https://www.google.com/maps/place/Cannon+Beach/@45.8917734,-123.9615273,17z">Cannon Beach</a>, <a href="https://www.google.com/maps/place/Indian+Beach/@45.9220566,-123.9795465,17z">Indian Beach</a></p>
-            <p><strong>Stay:</strong> <a href="https://www.airbnb.com/rooms/554617289171594840">The Dolphin House - Rockaway Beach, OR</a></p>
+            <p><strong>Stay:</strong> <a href="https://www.airbnb.com/rooms/554617289171594
+        840">The Dolphin House - Rockaway Beach, OR</a></p>
             <div class="image-slider" id="slider-day6">
                 <button class="slider-button left" onclick="slideImages('slider-day6', 'left')">&#9664;</button>
                 <div class="slider-images">
@@ -259,7 +323,7 @@
             <p><strong>Highlights:</strong></p>
             <ul class="location-list">
                 <li><a href="https://www.google.com/maps/place/St+Helens,+OR/@45.8571484,-122.8620464,13z">St. Helens</a>: Twilight locations including the Swan house, parking lot where Edward saves Bella, and Thunderbird & Whale Bookstore</li>
-<li><a href="https://www.google.com/maps/place/Kalama+High+School/@46.0082684,-122.8420321,17z">Kalama High School</a></li>
+                <li><a href="https://www.google.com/maps/place/Kalama+High+School/@46.0082684,-122.8420321,17z">Kalama High School</a></li>
                 <li><a href="https://www.google.com/maps/place/Carver+Cafe/@45.393148,-122.506759,15z">Carver Café</a></li>
             </ul>
             <p><strong>Stay:</strong> <a href="https://www.airbnb.com/rooms/1103529">The Hen House - Portland, OR</a></p>
