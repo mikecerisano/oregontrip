@@ -350,6 +350,17 @@
             const button = document.querySelector(`#schedule-toggle-${dayId} span`);
             button.textContent = content.classList.contains('active') ? '▼' : '▶';
         }
+        window.onload = function() {
+    // Open all schedule sections by default
+    for(let i = 1; i <= 7; i++) {
+        const content = document.getElementById(`schedule-content-${i}`);
+        const button = document.querySelector(`#schedule-toggle-${i} span`);
+        if(content && button) {
+            content.classList.add('active');
+            button.textContent = '▼';
+        }
+    }
+};
     </script>
 </head>
 <body>
