@@ -155,6 +155,100 @@
         .location-list li {
             margin-bottom: 0.5rem;
         }
+/* Schedule styles */
+        .schedule-section {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .schedule-toggle {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            width: 100%;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .schedule-toggle:hover {
+            background: #2980b9;
+        }
+
+        .schedule-content {
+            display: none;
+            padding: 1rem 0;
+        }
+
+        .schedule-content.active {
+            display: block;
+        }
+
+        .schedule-item {
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--secondary);
+        }
+
+        .schedule-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .schedule-time {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .schedule-activity {
+            margin: 0.25rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .schedule-activity-text {
+            flex: 1;
+        }
+
+        .schedule-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+
+        .schedule-links {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .schedule-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.9rem;
+            min-height: 32px;
+            padding: 0.25rem 0.75rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+            color: var(--secondary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .schedule-link:hover {
+            background: #e9ecef;
+            text-decoration: none;
+        }
 
         /* Mobile optimizations */
         @media (max-width: 768px) {
@@ -204,8 +298,37 @@
                 margin-bottom: 1rem;
                 padding-left: 1rem;
             }
+
+            .schedule-section {
+                margin-top: 0.75rem;
+                padding-top: 0.75rem;
+            }
+
+            .schedule-toggle {
+                padding: 0.75rem;
+                font-size: 0.85rem;
+            }
+
+            .schedule-item {
+                padding-left: 0.75rem;
+            }
+
+            .schedule-time {
+                font-size: 0.85rem;
+            }
+
+            .schedule-description {
+                font-size: 0.85rem;
+            }
+
+            .schedule-link {
+                font-size: 0.85rem;
+                padding: 0.25rem 0.5rem;
+            }
         }
     </style>
+
+    <!-- JavaScript for sliders and schedule toggles -->
     <script>
         function slideImages(sliderId, direction) {
             const slider = document.getElementById(sliderId);
@@ -220,8 +343,16 @@
                 images.style.transform = `translateX(${currentTransform - imageWidth}px)`;
             }
         }
+
+        function toggleSchedule(dayId) {
+            const content = document.getElementById(`schedule-content-${dayId}`);
+            content.classList.toggle('active');
+            const button = document.querySelector(`#schedule-toggle-${dayId} span`);
+            button.textContent = content.classList.contains('active') ? '▼' : '▶';
+        }
     </script>
 </head>
+<body>
 <body>
     <div class="container">
         <h1>Oregon Road Trip Itinerary (June 27 - July 4, 2025)</h1>
@@ -232,8 +363,116 @@
         
         <div class="day-card">
             <h3>Day 1: Portland & Columbia River Gorge</h3>
-            <p><strong>Highlights:</strong> <a href="https://www.google.com/maps/place/Multnomah+Falls/@45.5762169,-122.1157817,17z">Multnomah Falls</a>, <a href="https://www.google.com/maps/place/Latourell+Falls/@45.5378647,-122.240705,17z">Latourell Falls</a>, <a href="https://www.google.com/maps/place/Hood+River,+OR/@45.7067985,-121.5287472,12z">Hood River</a></p>
+            <p><strong>Highlights:</strong> <a href="https://maps.app.goo.gl/bZ2g49XLYWzj2Hnz7">Multnomah Falls</a>, <a href="https://maps.app.goo.gl/SHGbKrw5V8Uiq6zu9">Latourell Falls</a>, <a href="https://maps.app.goo.gl/8GQ99SkGo5ZB3FSVA">Hood River</a></p>
             <p><strong>Stay:</strong> <a href="https://www.airbnb.com/rooms/44506907">Diamond in the Rough - Stevenson, WA</a></p>
+            
+            <!-- Detailed Schedule Section -->
+            <div class="schedule-section">
+                <button class="schedule-toggle" id="schedule-toggle-1" onclick="toggleSchedule(1)">
+                    Detailed Schedule <span>▶</span>
+                </button>
+                <div class="schedule-content" id="schedule-content-1">
+                    <div class="schedule-item">
+                        <div class="schedule-time">8:00 AM - 9:00 AM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🌊 Multnomah Falls</div>
+                        </div>
+                        <div class="schedule-description">Oregon's tallest waterfall, 620 feet! Easy paved trail to the bridge for a perfect photo op.</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/bZ2g49XLYWzj2Hnz7" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">9:15 AM - 10:00 AM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🌊 Latourell Falls</div>
+                        </div>
+                        <div class="schedule-description">Dramatic waterfall plunging over basalt cliffs, with a short but scenic 2.4-mile loop hike.</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/SHGbKrw5V8Uiq6zu9" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">10:30 AM - 11:00 AM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">📸 Vista House at Crown Point</div>
+                        </div>
+                        <div class="schedule-description">Epic panoramic viewpoint over the Columbia River Gorge.</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/9GpL32m64DrMJZst6" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">12:00 PM - 1:00 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🍽️ Lunch in Hood River at Ferment Brewing</div>
+                        </div>
+                        <div class="schedule-description">Brewery with great river views and tasty burgers & bowls.</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/MVuRzExJUBx9feCs8" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">1:30 PM - 3:00 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🗺️ Explore Hood River</div>
+                        </div>
+                        <div class="schedule-description">Fun small-town vibes, check out boutique shops or walk along the riverfront park.</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/8GQ99SkGo5ZB3FSVA" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">3:30 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🏡 Check into Airbnb - Stevenson, WA</div>
+                        </div>
+                        <div class="schedule-description">'Diamond in the Rough' cabin in the woods!</div>
+                        <div class="schedule-links">
+                            <a href="https://www.airbnb.com/rooms/44506907" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                🏠 Airbnb
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">5:30 PM - 7:00 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🍺 Dinner at Walking Man Brewing</div>
+                        </div>
+                        <div class="schedule-description">Awesome small-batch brewery with a beer garden.</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/PKqECmVbNDK5kfYy6" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">7:30 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">😌 Relax at Airbnb</div>
+                        </div>
+                        <div class="schedule-description">Evening relaxation at the cabin</div>
+                    </div>
+                </div>
+            </div>
+
             <div class="image-slider" id="slider-day1">
                 <button class="slider-button left" onclick="slideImages('slider-day1', 'left')">&#9664;</button>
                 <div class="slider-images">
@@ -244,11 +483,96 @@
                 <button class="slider-button right" onclick="slideImages('slider-day1', 'right')">&#9654;</button>
             </div>
         </div>
-
-        <div class="day-card">
+<div class="day-card">
             <h3>Day 2: Mt. Hood & Little Crater Lake</h3>
-            <p><strong>Highlights:</strong> <a href="https://www.google.com/maps/place/Trillium+Lake/@45.2848995,-121.7365412,17z">Trillium Lake</a>, <a href="https://maps.app.goo.gl/Hq41HdS18Lk4XBGR7">Timberline Lodge</a>, <a href="https://www.alltrails.com/trail/us/oregon/timberline-lodge-to-elk-meadow--2">White River Canyon Hike</a></p>
+            <p><strong>Highlights:</strong> <a href="https://www.google.com/maps/place/Trillium+Lake/@45.2672902,-121.7386417,17z">Trillium Lake</a>, <a href="https://maps.app.goo.gl/emCoWuS3TKWLYQdTA">Timberline Lodge</a>, <a href="https://www.pinesnvines.com/adventures/white-river-canyon-timberline-lodge">White River Canyon Hike</a></p>
             <p><strong>Stay:</strong> <a href="https://www.airbnb.com/rooms/44506907">Diamond in the Rough - Stevenson, WA</a></p>
+            
+            <!-- Detailed Schedule Section -->
+            <div class="schedule-section">
+                <button class="schedule-toggle" id="schedule-toggle-2" onclick="toggleSchedule(2)">
+                    Detailed Schedule <span>▶</span>
+                </button>
+                <div class="schedule-content" id="schedule-content-2">
+                    <div class="schedule-item">
+                        <div class="schedule-time">8:00 AM - 9:30 AM</div>
+                        <div
+<div class="schedule-activity">
+                            <div class="schedule-activity-text">💦 Trillium Lake</div>
+                        </div>
+                        <div class="schedule-description">Reflective lake with a perfect view of Mt. Hood, easy walking trail around it!</div>
+                        <div class="schedule-links">
+                            <a href="https://www.google.com/maps/place/Trillium+Lake/@45.2672902,-121.7386417,17z" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">10:00 AM - 11:30 AM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🏨 Timberline Lodge</div>
+                        </div>
+                        <div class="schedule-description">Famous hotel from The Shining, cool historic lodge with views!</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/emCoWuS3TKWLYQdTA" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">11:30 AM - 2:30 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🥾 White River Canyon Trail</div>
+                        </div>
+                        <div class="schedule-description">7-mile out-and-back hike through volcanic ridges, river crossings, and amazing views of Mt. Hood!</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/emCoWuS3TKWLYQdTA" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                            <a href="https://www.pinesnvines.com/adventures/white-river-canyon-timberline-lodge" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📝 Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">3:00 PM - 4:00 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🍽️ Lunch at Ratskeller Alpine Bar & Pizzeria</div>
+                        </div>
+                        <div class="schedule-description">Casual mountain restaurant, known for pizza & beer!</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/NQC7q3vJGrExhyMd6" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">4:30 PM - 6:00 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">💦 Little Crater Lake</div>
+                        </div>
+                        <div class="schedule-description">Tiny, vibrant blue spring-fed lake, short and easy hike!</div>
+                        <div class="schedule-links">
+                            <a href="https://www.google.com/maps/place/Little+Crater+Lake/@45.1479084,-121.7474627,17z" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">6:30 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🏡 Back to Airbnb & Dinner</div>
+                        </div>
+                        <div class="schedule-description">Return to Diamond in the Rough cabin</div>
+                    </div>
+                </div>
+            </div>
+
             <div class="image-slider" id="slider-day2">
                 <button class="slider-button left" onclick="slideImages('slider-day2', 'left')">&#9664;</button>
                 <div class="slider-images">
@@ -258,11 +582,84 @@
                 <button class="slider-button right" onclick="slideImages('slider-day2', 'right')">&#9654;</button>
             </div>
         </div>
-
-        <div class="day-card">
+<div class="day-card">
             <h3>Day 3: Silver Falls & Eugene</h3>
-            <p><strong>Highlights:</strong> <a href="https://maps.app.goo.gl/Ct8x81hdn2g4Tnna7">Trail of Ten Falls</a>, <a href="https://www.google.com/maps/place/Spencer+Butte/@43.990469,-123.105686,17z">Spencer Butte</a></p>
+            <p><strong>Highlights:</strong> <a href="https://maps.app.goo.gl/Ct8x81hdn2g4Tnna7">Trail of Ten Falls</a>, <a href="https://maps.app.goo.gl/t7QvKmer8v2d26t98">Spencer Butte</a></p>
             <p><strong>Stay:</strong> <a href="https://www.airbnb.com/rooms/1213928158929129071">Private Nature Lovers Sanctuary - Eugene, OR</a></p>
+            
+            <!-- Detailed Schedule Section -->
+            <div class="schedule-section">
+                <button class="schedule-toggle" id="schedule-toggle-3" onclick="toggleSchedule(3)">
+                    Detailed Schedule <span>▶</span>
+                </button>
+                <div class="schedule-content" id="schedule-content-3">
+                    <div class="schedule-item">
+                        <div class="schedule-time">9:00 AM - 12:00 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🌊 Trail of Ten Falls</div>
+                        </div>
+                        <div class="schedule-description">Stunning 7.8-mile loop featuring TEN waterfalls! Option to shorten if needed.</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/Ct8x81hdn2g4Tnna7" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">12:30 PM - 1:30 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🍽️ Lunch at Mac's Place</div>
+                        </div>
+                        <div class="schedule-description">Historic downtown pub with great food & local beers in charming Silverton.</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/qFuHWq7GB8Z2QAHg9" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">2:00 PM - 4:30 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🏡 Drive to Eugene & Check into Airbnb</div>
+                        </div>
+                        <div class="schedule-description">'Nature Lovers Sanctuary' cozy forest getaway!</div>
+                        <div class="schedule-links">
+                            <a href="https://www.airbnb.com/rooms/1213928158929129071" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                🏠 Airbnb
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">5:00 PM - 6:30 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🥾 Spencer Butte Hike</div>
+                        </div>
+                        <div class="schedule-description">Short but steep 1.7-mile trail to a panoramic viewpoint over Eugene.</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/t7QvKmer8v2d26t98" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">7:00 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🍺 Dinner at Falling Sky Brewing</div>
+                        </div>
+                        <div class="schedule-description">Brewery with great food & house-made charcuterie.</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/j1tuVQwtWwq3px2k8" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="image-slider" id="slider-day3">
                 <button class="slider-button left" onclick="slideImages('slider-day3', 'left')">&#9664;</button>
                 <div class="slider-images">
@@ -272,11 +669,84 @@
                 <button class="slider-button right" onclick="slideImages('slider-day3', 'right')">&#9654;</button>
             </div>
         </div>
-
-        <div class="day-card">
+<div class="day-card">
             <h3>Day 4: Clear Lake & McKenzie River</h3>
-            <p><strong>Highlights:</strong> <a href="https://www.google.com/maps/place/Clear+Lake/@44.3861744,-121.9815505,15z">Clear Lake</a>, <a href="https://maps.app.goo.gl/bSAKXMaLSDVUcV4G7">McKenzie River Trail</a></p>
+            <p><strong>Highlights:</strong> <a href="https://maps.app.goo.gl/BR3nzT9d3GKA4PYL7">Clear Lake</a>, <a href="https://maps.app.goo.gl/bSAKXMaLSDVUcV4G7">McKenzie River Trail</a></p>
             <p><strong>Stay:</strong> <a href="https://www.airbnb.com/rooms/43770561">On the River - Wooded Bliss Cabin - McKenzie Bridge, OR</a></p>
+            
+            <!-- Detailed Schedule Section -->
+            <div class="schedule-section">
+                <button class="schedule-toggle" id="schedule-toggle-4" onclick="toggleSchedule(4)">
+                    Detailed Schedule <span>▶</span>
+                </button>
+                <div class="schedule-content" id="schedule-content-4">
+                    <div class="schedule-item">
+                        <div class="schedule-time">9:30 AM - 11:00 AM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🛶 Clear Lake Kayaking</div>
+                        </div>
+                        <div class="schedule-description">Crystal-clear blue lake, kayak rental available!</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/BR3nzT9d3GKA4PYL7" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">11:30 AM - 2:30 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🥾 McKenzie River Trail (Koosah & Sahalie Falls Loop)</div>
+                        </div>
+                        <div class="schedule-description">3-mile scenic hike with two stunning waterfalls.</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/bSAKXMaLSDVUcV4G7" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">3:00 PM - 4:30 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🍺 Relax & Drinks at Takoda's Restaurant</div>
+                        </div>
+                        <div class="schedule-description">Local pizza & beer spot.</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/o2MVETN7UHJUapTZA" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">5:00 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🏡 Check into Airbnb – McKenzie River Cabin</div>
+                        </div>
+                        <div class="schedule-description">'On the River' secluded cabin!</div>
+                        <div class="schedule-links">
+                            <a href="https://www.airbnb.com/rooms/43770561" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                🏠 Airbnb
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">6:30 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🍽️ Dinner at Obsidian Grill</div>
+                        </div>
+                        <div class="schedule-description">Nice steakhouse with river views.</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/Dgeyn2pDoNkMx6Fc9" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="image-slider" id="slider-day4">
                 <button class="slider-button left" onclick="slideImages('slider-day4', 'left')">&#9664;</button>
                 <div class="slider-images">
@@ -286,11 +756,71 @@
                 <button class="slider-button right" onclick="slideImages('slider-day4', 'right')">&#9654;</button>
             </div>
         </div>
-
-        <div class="day-card">
+<div class="day-card">
             <h3>Day 5: Otter Crest Beach & Newport</h3>
-            <p><strong>Highlights:</strong> <a href="https://maps.app.goo.gl/3YgosWBJ8fYa2J799">Otter Crest Beach</a>, <a href="https://maps.app.goo.gl/KD3pSKC1cAuYi4xj6">Devil's Punchbowl</a>, <a href="https://www.google.com/maps/place/Nye+Beach/@44.6367834,-124.0647359,17z">Nye Beach</a></p>
+            <p><strong>Highlights:</strong> <a href="https://maps.app.goo.gl/AudYzvaMikYbjtsq9">Otter Crest Beach</a>, <a href="https://maps.app.goo.gl/kxGobRJGYnX9hzGc9">Devil's Punchbowl</a>, <a href="https://maps.app.goo.gl/kxGobRJGYnX9hzGc9">Nye Beach</a></p>
             <p><strong>Stay:</strong> <a href="https://www.airbnb.com/rooms/730437927121879065">The Driftwood at Nye Beach - Newport, OR</a></p>
+            
+            <!-- Detailed Schedule Section -->
+            <div class="schedule-section">
+                <button class="schedule-toggle" id="schedule-toggle-5" onclick="toggleSchedule(5)">
+                    Detailed Schedule <span>▶</span>
+                </button>
+                <div class="schedule-content" id="schedule-content-5">
+                    <div class="schedule-item">
+                        <div class="schedule-time">11:00 AM - 12:30 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🏖️ Otter Crest Beach</div>
+                        </div>
+                        <div class="schedule-description">Hidden beach with stunning cliffs & tide pools!</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/AudYzvaMikYbjtsq9" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">1:00 PM - 3:30 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🌊 Devil's Punchbowl & Nye Beach</div>
+                        </div>
+                        <div class="schedule-description">Massive ocean-carved bowl, then a chill beach town.</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/kxGobRJGYnX9hzGc9" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">4:00 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🏡 Check into Airbnb - Nye Beach</div>
+                        </div>
+                        <div class="schedule-description">'The Driftwood' oceanfront condo!</div>
+                        <div class="schedule-links">
+                            <a href="https://www.airbnb.com/rooms/730437927121879065" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                🏠 Airbnb
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">6:30 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🍽️ Dinner at Local Ocean Seafoods</div>
+                        </div>
+                        <div class="schedule-description">Top-rated seafood spot in Newport!</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/kVNMJ4XdfCbMFwvr6" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="image-slider" id="slider-day5">
                 <button class="slider-button left" onclick="slideImages('slider-day5', 'left')">&#9664;</button>
                 <div class="slider-images">
@@ -301,12 +831,84 @@
                 <button class="slider-button right" onclick="slideImages('slider-day5', 'right')">&#9654;</button>
             </div>
         </div>
-
-        <div class="day-card">
+<div class="day-card">
             <h3>Day 6: Cannon Beach & Coastal Drive</h3>
-            <p><strong>Highlights:</strong> <a href="https://maps.app.goo.gl/xp7qgMJo75uaU6AS7">Cape Kiwanda</a>, <a href="https://www.google.com/maps/place/Cannon+Beach/@45.8917734,-123.9615273,17z">Cannon Beach</a>, <a href="https://www.google.com/maps/place/Indian+Beach/@45.9220566,-123.9795465,17z">Indian Beach</a></p>
-            <p><strong>Stay:</strong> <a href="https://www.airbnb.com/rooms/554617289171594
-840">The Dolphin House - Rockaway Beach, OR</a></p>
+            <p><strong>Highlights:</strong> <a href="https://maps.app.goo.gl/xp7qgMJo75uaU6AS7">Cape Kiwanda</a>, <a href="https://maps.app.goo.gl/gbhUoferoKUcJnxB8">Cannon Beach</a>, <a href="https://maps.app.goo.gl/wgAvtohwNY9R8nHC9">Indian Beach</a></p>
+            <p><strong>Stay:</strong> <a href="https://www.airbnb.com/rooms/554617289171594840">The Dolphin House - Rockaway Beach, OR</a></p>
+            
+            <!-- Detailed Schedule Section -->
+            <div class="schedule-section">
+                <button class="schedule-toggle" id="schedule-toggle-6" onclick="toggleSchedule(6)">
+                    Detailed Schedule <span>▶</span>
+                </button>
+                <div class="schedule-content" id="schedule-content-6">
+                    <div class="schedule-item">
+                        <div class="schedule-time">10:00 AM - 11:30 AM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">⛱️ Cape Kiwanda</div>
+                        </div>
+                        <div class="schedule-description">Huge sand dune with insane ocean views!</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/xp7qgMJo75uaU6AS7" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">12:30 PM - 2:00 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🏖️ Cannon Beach (Haystack Rock)</div>
+                        </div>
+                        <div class="schedule-description">Oregon's most famous beach, giant rock formations.</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/gbhUoferoKUcJnxB8" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">2:30 PM - 3:30 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🏖️ Indian Beach</div>
+                        </div>
+                        <div class="schedule-description">Secluded cove with cliffs & surf.</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/wgAvtohwNY9R8nHC9" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">4:30 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🏡 Check into Airbnb - Rockaway Beach</div>
+                        </div>
+                        <div class="schedule-description">'The Dolphin House' oceanview house!</div>
+                        <div class="schedule-links">
+                            <a href="https://www.airbnb.com/rooms/554617289171594840" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                🏠 Airbnb
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">6:00 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🍽️ Dinner at Offshore Grill & Coffeehouse</div>
+                        </div>
+                        <div class="schedule-description">Laid-back seafood cafe.</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/WR7hXujao81HevZMA" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="image-slider" id="slider-day6">
                 <button class="slider-button left" onclick="slideImages('slider-day6', 'left')">&#9664;</button>
                 <div class="slider-images">
@@ -317,16 +919,92 @@
                 <button class="slider-button right" onclick="slideImages('slider-day6', 'right')">&#9654;</button>
             </div>
         </div>
-
-        <div class="day-card">
+<div class="day-card">
             <h3>Day 7: Twilight Filming Locations & Portland</h3>
             <p><strong>Highlights:</strong></p>
             <ul class="location-list">
-                <li><a href="https://www.google.com/maps/place/St+Helens,+OR/@45.8571484,-122.8620464,13z">St. Helens</a>: Twilight locations including the Swan house, parking lot where Edward saves Bella, and Thunderbird & Whale Bookstore</li>
-                <li><a href="https://maps.app.goo.gl/23tvPMKbevDtUKEq9">Kalama High School</a></li>
-                <li><a href="hhttps://maps.app.goo.gl/BV4t7CFFFgH7D2mK7">Carver Café</a></li>
+                <li><a href="https://maps.app.goo.gl/uM9FHZQ2txpu9BTs6">St. Helens</a>: Twilight locations including the Swan house, parking lot where Edward saves Bella, and Thunderbird & Whale Bookstore</li>
+                <li><a href="https://maps.app.goo.gl/7xJcnEhxJw9rywD18">Kalama High School</a></li>
+                <li><a href="https://maps.app.goo.gl/BV4t7CFFFgH7D2mK7">Carver Café</a></li>
             </ul>
             <p><strong>Stay:</strong> <a href="https://www.airbnb.com/rooms/1103529">The Hen House - Portland, OR</a></p>
+            
+            <!-- Detailed Schedule Section -->
+            <div class="schedule-section">
+                <button class="schedule-toggle" id="schedule-toggle-7" onclick="toggleSchedule(7)">
+                    Detailed Schedule <span>▶</span>
+                </button>
+                <div class="schedule-content" id="schedule-content-7">
+                    <div class="schedule-item">
+                        <div class="schedule-time">10:30 AM - 12:00 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🧛 St. Helens Twilight Locations</div>
+                        </div>
+                        <div class="schedule-description">See Bella's house, the bookstore, and the parking lot where Edward saves her!</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/uM9FHZQ2txpu9BTs6" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                            <a href="https://specialneedstravelmom.com/northwest-road-trips/twilight-movie-road-trip-filming-locations-in-st-helens-oregon/" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📝 Guide
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">12:30 PM - 1:30 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🍽️ Lunch at Carver Cafe</div>
+                        </div>
+                        <div class="schedule-description">Featured in Twilight, classic diner with great pies!</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/BV4t7CFFFgH7D2mK7" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">2:00 PM - 3:00 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🧛 Kalama High School</div>
+                        </div>
+                        <div class="schedule-description">Iconic school where Edward & Bella meet.</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/7xJcnEhxJw9rywD18" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">4:00 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🏡 Check into Airbnb - Portland</div>
+                        </div>
+                        <div class="schedule-description">'The Hen House' cozy house in Portland!</div>
+                        <div class="schedule-links">
+                            <a href="https://www.airbnb.com/rooms/1103529" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                🏠 Airbnb
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">6:30 PM</div>
+                        <div class="schedule-activity">
+                            <div class="schedule-activity-text">🍽️ Final Dinner at Le Pigeon</div>
+                        </div>
+                        <div class="schedule-description">Trendy French bistro, last fancy meal!</div>
+                        <div class="schedule-links">
+                            <a href="https://maps.app.goo.gl/8g1zxQhUSLo8Nxwe9" target="_blank" rel="noopener noreferrer" class="schedule-link">
+                                📍 Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="image-slider" id="slider-day7">
                 <button class="slider-button left" onclick="slideImages('slider-day7', 'left')">&#9664;</button>
                 <div class="slider-images">
